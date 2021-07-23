@@ -1,0 +1,68 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Platform Racing/MenuScreen/MenuScreen.gd" type="Script" id=1]
+
+[node name="MenuScreen" type="CenterContainer"]
+margin_right = 1024.0
+margin_bottom = 600.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 446.0
+margin_top = 221.0
+margin_right = 577.0
+margin_bottom = 379.0
+custom_constants/separation = 25
+
+[node name="JoinContainer" type="VBoxContainer" parent="VBoxContainer"]
+margin_right = 131.0
+margin_bottom = 68.0
+custom_constants/separation = 5
+
+[node name="AddressLabel" type="Label" parent="VBoxContainer/JoinContainer"]
+margin_right = 131.0
+margin_bottom = 14.0
+text = "IP address"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AddressInput" type="LineEdit" parent="VBoxContainer/JoinContainer"]
+margin_top = 19.0
+margin_right = 131.0
+margin_bottom = 43.0
+text = "192.168.86.220:8000"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="JoinButton" type="Button" parent="VBoxContainer/JoinContainer"]
+margin_top = 48.0
+margin_right = 131.0
+margin_bottom = 68.0
+text = "Join Server"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OpenServerButton" type="Button" parent="VBoxContainer"]
+margin_top = 93.0
+margin_right = 131.0
+margin_bottom = 113.0
+text = " Create New Game"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="QuitGameButton" type="Button" parent="VBoxContainer"]
+margin_top = 138.0
+margin_right = 131.0
+margin_bottom = 158.0
+text = "Quit Game"
+
+[connection signal="pressed" from="VBoxContainer/JoinContainer/JoinButton" to="." method="_on_JoinButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/OpenServerButton" to="." method="_on_OpenServerButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitGameButton" to="." method="_on_QuitGameButton_pressed"]
