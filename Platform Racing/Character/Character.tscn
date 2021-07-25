@@ -68,12 +68,18 @@ shape = SubResource( 1 )
 position = Vector2( 0, -32.0001 )
 frames = SubResource( 11 )
 animation = "Run"
-frame = 5
+frame = 1
 playing = true
 script = ExtResource( 3 )
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 0.2
-autostart = true
+[node name="Left" type="RayCast2D" parent="."]
+position = Vector2( 0, -16 )
+enabled = true
+cast_to = Vector2( -30, 0 )
+collision_mask = 2
 
-[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[node name="Right" type="RayCast2D" parent="."]
+position = Vector2( 0, -16 )
+enabled = true
+cast_to = Vector2( 30, 0 )
+collision_mask = 2
